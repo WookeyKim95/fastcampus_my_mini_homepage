@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wookikim's Portfolio</title>
+  <link rel="stylesheet" type="text/css" href="css/reset.css"/> 
+  <link rel="stylesheet" type="text/css" href="css/style_by_css.css"/> 
+  <script src="js/my_data.js"></script>
+  <script src="js/my_script.js"></script>
+</head>
+<body onload="init()">
+  <header>
+    <p class="logo" href="#">Wookikim's gallery</p>
+  </header>
+
+  <main class="MyHome">
+
+    <!--좌측 사이드바-->
+    <aside>
+      <ul>
+        <li class="MyHome on" onclick="set_menu('MyHome')">Home</li>
+        <li class="who_am_I" onclick="set_menu('who_am_I')">Who am I?</li>
+        <li class="gallery" onclick="set_menu('gallery')">Pictures</li>
+      </ul>
+    </aside>
+
+    <div class="content">
+      <!--홈 화면-->
+      <section id="MyHome" class="dep _MyHome">
+        <div class="my_face">
+          <img src=./img/tool/my_face.jpg>
+        </div>
+
+        <h1>Hello Everyone!!</h1>
+
+        <div class="my_char">
+          <img src=./img/tool/my_char.png>
+        </div>
+
+        <span>저의 블로그에 오신것을 환영합니다.<br>
+            <br>
+            웹 프론트엔드 개발자가 되는 꿈을 가지고 있습니다.<br>
+            차근차근 배워나가겠습니다.<br>
+            잘 부탁드려요!<br>
+        </span>
+        
+      </section>
+
+      <!--자기소개 프로필-->
+      <section id="who_am_I" class="dep _who_am_I">
+        <div class="non-edit">
+          <table>
+            <tr>
+              <td>이름</td>
+              <td id="myName"></td>
+            </tr>
+
+            <tr>
+              <td>나이</td>
+              <td id="myOld"></td>
+            </tr>
+            
+            <tr>
+              <td>전공</td>
+              <td id="myMajor"></td>
+            </tr>
+
+            <tr>
+              <td>성별</td>
+              <td>
+                <input class="male" name="as" id="male" type="radio" value="male" disabled/>
+                <label for="male">남성</label>
+                <input class="female" name="as" id="female" type="radio" value="female" disabled/>
+                <label for="female">여성</label>
+              </td>
+            </tr>
+
+            <tr>
+              <td>소개</td>
+              <td class="introduction">
+                <input id="ip-intro" class="mi-dep edit" type="text" maxlength="30"/>
+                <span id="sp-intro" class="mi-dep non-edit"></span>
+              </td>
+            </tr>
+
+          </table>
+          <div class="mi-dep non-edit button" onclick="set_edit_who_am_I(true)">수정</div>
+          <div class="mi-dep edit button" onclick="update_who_am_I()">확인</div>
+          <div class="mi-dep edit button cancel" onclick="set_edit_who_am_I(false)">취소</div>
+        </div>
+      </section>
+
+      <!--사진 전시-->
+      <section id="gallery" class="dep _gallery">
+
+        <h1></h1>
+
+        <article class="hidden">
+          <div class="picture"></div>
+            <div class="info">
+              <div class="description"></div>
+            </div>
+        </article>
+
+      </section>
+
+    </div>
+  </main>
+
+
+  <footer>
+  <p>
+    Made By W.K.Kim
+  </p>
+
+  </footer>
+</body>
+</html>

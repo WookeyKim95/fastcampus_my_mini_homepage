@@ -1,0 +1,279 @@
+body {
+    position: relative;
+  }
+  
+header {
+    display: grid;
+    grid-template-columns: 10px 1fr 10px;
+    grid-template-areas: 
+     'left-space logo right-space';
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
+    height: 10vh;
+    line-height: 5.2rem;
+    background: linear-gradient(to bottom, white, 90%, rgb(141, 174, 204));
+    box-shadow: 0 0 6px rgba(100, 100, 100, 1.0);
+  }
+
+header .logo {
+    grid-area: logo;
+    font-size: 300%;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    color: #54707a;
+  }
+
+#gallery {
+    padding: 20px;
+  }
+
+main {
+    position: relative;
+    padding-left: 240px;
+    padding-top: 0;
+    padding-right: 0;
+  }
+
+main aside {
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    width: 240px;
+    background-color:#eee;
+    border-right:1px solid #d3d3d3;
+  }
+
+main aside ul li {
+    padding: 20px 34px;
+    cursor: pointer;
+    font-size: 2rem;
+  }
+
+main aside ul:first-child{
+    margin-top:10vh;
+  }
+
+/*얘가 있어야 메뉴창처럼 동작!*/
+main aside ul li:hover {
+    color: white;
+    background-color: #444;
+  }
+
+/*선택 되어있을 때!*/
+main aside ul li.on {
+    background-color: rgb(109, 121, 134);
+    font-weight: bolder;
+    color: white;
+  }
+
+
+main .content {
+    min-height: calc(100vh - 65px);
+    background: linear-gradient(to bottom, white, 50%, #daebfa);
+  }
+
+
+/*홈 화면 css*/
+#MyHome {
+    padding: 48px 64px;
+    font-size: 1.3rem;
+    line-height: 1.3em;
+  }
+
+#MyHome h1 {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-top: 16px;
+    margin-bottom: 50px;
+    text-align: center;
+    color:rgb(5, 33, 75);
+  }
+
+#MyHome span {
+    font-size: 1em;
+    font-weight: 700;
+    margin-top: 16px;
+    color:rgb(5, 33, 75);
+  }
+
+#MyHome .my_face{
+    text-align: center;
+  }
+
+#MyHome .my_face > img{
+    width:25vh;
+    height:25vh;
+    border-radius: 100%;
+    object-fit: cover;
+    margin-top: 6vh;
+    /*희한하게 여기있는 6vh를 8vh로 고치면
+    footer 레이아웃이 깨진다. 왜일까.*/
+  }
+
+#MyHome .my_char{
+    width: 50vw;
+  }
+
+#MyHome .my_char > img{
+    width:30%;
+    height:30%;
+    float: left;
+    object-fit: cover;
+  }
+
+/*갤러리 화면 css*/
+
+#gallery h1 {
+    margin-top:10vh;
+    margin-bottom:10px;
+    font-size: 30px;
+    font-weight: bolder;
+    color:#54707a;
+  }
+
+article {
+    display: inline-block;
+    margin: 8px;
+    padding: 24px;
+    background-color:rgb(255, 255, 255) ;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+  }
+
+article.hidden {
+    display: none;
+  }
+
+article:hover {
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.33);
+  }
+
+article .picture {
+    min-width: 300px;
+    min-height: 440px;
+    border-radius: 4px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+  }
+
+article .info {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    grid-template-areas:
+      'star desciption';
+    margin-top: 16px;
+    font-size: 1.2rem;
+  }
+
+
+article .info .description {
+    grid-area: description;
+    padding: 4px 0;
+    color: gray;
+  }
+
+
+/*자기소개 프로필 화면 css*/
+#who_am_I {
+    padding: 48px 64px;
+    font-size: 1.2rem;
+  }
+
+#who_am_I div table {
+    margin-top:6vh;
+  }
+
+#who_am_I .instruction {
+    font-size: 1.3rem;
+    margin-bottom: 24px;
+  }
+
+.button {
+    display: inline-block;
+    border-radius: 1em;
+    padding: 14px 24px;
+    color: white;
+    background-color: #596a7c;
+    font-size: 1.1rem;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+
+.button.cancel {
+    color: inherit;
+    background-color: #ddd;
+  }
+.button:hover {
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.33);
+  }
+  
+#who_am_I table { 
+    margin-bottom: 24px;
+  }
+
+#who_am_I table tr td { 
+    padding: 20px; 
+    border-bottom: 1.5px solid rgb(48, 50, 59);
+  }
+
+#who_am_I table tr:last-child td { 
+    border-bottom: 0;
+  }
+
+#who_am_I table tr td:first-child {
+    color: rgb(54, 61, 68);
+    font-weight: bolder;
+  }
+
+#who_am_I table tr td input[type=text] { 
+    width: 440px;
+    height: 32px;
+    padding: 0 8px;
+    line-height: 32px;
+    font-size: 1rem;
+  }
+
+#who_am_I table tr td label { 
+    margin-right: 16px;
+  }
+
+#who_am_I > div.non-edit .mi-dep.edit,
+#who_am_I > div.edit .mi-dep.non-edit {
+    display: none;
+  }
+  
+
+/*메뉴마다 화면 분할 css*/
+
+main .dep { 
+    display: none;
+  }
+
+main.MyHome .dep._MyHome,
+main.who_am_I .dep._who_am_I,
+main.gallery .dep._gallery {
+    display: block;
+  }
+
+
+/* footer */
+footer {
+    position: relative;
+    background-color:#30435c;
+    padding:25px 0;
+    font-size:3.5rem;
+    text-align:center;
+    z-index: 1;
+  }
+
+footer p {
+    color: #fff;
+    text-decoration: none
+  }
+
